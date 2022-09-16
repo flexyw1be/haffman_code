@@ -1,9 +1,9 @@
 def haffman_algorithm(x):
     m = [[x.count(i), i] for i in sorted(set(x), key=lambda i: x.count(i))]
     while len(m) > 2:
-        m.sort()
-        al_new = [[m[0][0] + m[1][0], [m[0], m[1]]]] + m[2:]
-        m = al_new
+        m = sorted(m)
+        s = [[m[0][0] + m[1][0], [m[0], m[1]]]] + m[2:]
+        m = s
     return m
 
 
